@@ -3,7 +3,6 @@ package com.idium.editap.selenium;
 
 import io.ddavison.conductor.Browser;
 import io.ddavison.conductor.Config;
-import org.junit.Test;
 
 @Config(
         browser = Browser.CHROME,
@@ -14,7 +13,7 @@ import org.junit.Test;
  * Created by Bartek on 23.05.2017.
  */
 public class StrypeLibraryTest extends Login {
-
+/*
     @Test
     public void openStrypeLibraryTest() {
 
@@ -28,5 +27,5 @@ public class StrypeLibraryTest extends Login {
     public void addStrypeTest() {
 
     }
-
+*/
 }

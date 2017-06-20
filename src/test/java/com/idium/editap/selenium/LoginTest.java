@@ -3,8 +3,6 @@ package com.idium.editap.selenium;
 import io.ddavison.conductor.Browser;
 import io.ddavison.conductor.Config;
 import io.ddavison.conductor.Locomotive;
-import org.junit.Test;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 @Config(
@@ -16,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * Created by Bartek on 23.05.2017.
  */
 public class LoginTest extends Locomotive {
-
+/*
     @Test
     public void testLoginFormExist() {
         //driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
@@ -40,5 +38,5 @@ public class LoginTest extends Locomotive {
         //wait.withMessage("dupaaa");
         //wait.wait(10000);
     }
-
+*/
 }
