@@ -15,12 +15,12 @@ public class AdminInterfaceElements {
 
 
     // thumb menu
-    public static final String LOC_BTN_THUMBMENU = "label[class='ggc-label']";
-    public static final String LOC_BTN_THUMBMENU_SOLUTIONSETTINGS = "label[title='Settings']";
+    public static final String LOC_BTN_THUMBMENU = "//label[contains(@class, 'ggc-label')]";
+    public static final String LOC_BTN_THUMBMENU_SOLUTIONSETTINGS = "//i[contains(@class, 'bi_interface-list-view')]";
 
     //solution settings
-    public static final String LOC_DIV_SOLUTIONSETTINGS = "div[class='solutionSettings']";
-    public static final String LOC_BTN_PAGESETTINGS = "i[class='pageSettings']";
+    public static final String LOC_DIV_SOLUTIONSETTINGS = "//div[contains(@class, 'solutionSettings')]";
+    public static final String LOC_BTN_PAGESETTINGS = "//i[contains(@class, 'pageSettings')]";
 
 
     //manage strype
