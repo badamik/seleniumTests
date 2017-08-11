@@ -23,12 +23,13 @@ import java.io.IOException;
 public class SolutionSettingsTest extends Login {
 
     @Test
-    public void openSolutionSettingsTest() {
+    public void openSolutionSettingsTest() throws IOException {
 
         WebElement buttonThumbmenu = driver.findElement(By.xpath(AdminInterfaceElements.LOC_BTN_THUMBMENU));
         buttonThumbmenu.click();
 
-        WebElement buttonSolutionSettings = driver.findElement(By.xpath(AdminInterfaceElements.LOC_BTN_THUMBMENU_SOLUTIONSETTINGS));
+
+        WebElement buttonSolutionSettings = driver.findElement(AdminInterfaceElements.LOC_BTN_THUMBMENU_SOLUTIONSETTINGS);
         buttonSolutionSettings.click();
 
 
@@ -37,27 +38,31 @@ public class SolutionSettingsTest extends Login {
 
         Assert.assertNotNull(divSolutionSettings);
     }
-
+/*
     @Test
     public void openpageSettingsTest() throws IOException {
         WebElement buttonThumbmenu = driver.findElement(By.xpath(AdminInterfaceElements.LOC_BTN_THUMBMENU));
         buttonThumbmenu.click();
 
+        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(scrFile, new File("buttonThumbmenuclick.png"));
+
         WebElement buttonSolutionSettings = driver.findElement(By.xpath(AdminInterfaceElements.LOC_BTN_THUMBMENU_SOLUTIONSETTINGS));
         buttonSolutionSettings.click();
 
+        scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(scrFile, new File("buttonSolutionSettingsclick.png"));
 
-        WebElement divSolutionSettings = (new WebDriverWait(driver, 100))
-                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(AdminInterfaceElements.LOC_DIV_SOLUTIONSETTINGS)));
 
-        //File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        //FileUtils.copyFile(scrFile, new File("iamnotadumbass.png"));
+        WebElement pageSettingsDiv = (new WebDriverWait(driver, 10000))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(AdminInterfaceElements.LOC_DIV_PAGESETTINGS)));
+
+        scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(scrFile, new File("iamnotadumbass.png"));
 
         WebElement pageSettings = driver.findElement(By.xpath(AdminInterfaceElements.LOC_BTN_PAGESETTINGS));
         pageSettings.click();
-
-
-
     }
+    */
 
 }

@@ -1,5 +1,6 @@
 package com.idium.editap.selenium;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.openqa.selenium.By;
@@ -27,12 +28,11 @@ public class Login {
 
     WebDriver driver;
 
-    @Rule
-    public ScreenShotRule screenshotRule;
+    String testServerUrl = "http://dev-strype.idium.no/";
 
     @Before
     public void testLoginForm() throws InterruptedException {
-
+        driver = new PhantomJSDriver();
         System.out.println("test login form");
 
         File file = new File("phantomjs");
@@ -51,9 +51,7 @@ public class Login {
                 file.getAbsolutePath()
         );
 
-        driver = new PhantomJSDriver(caps);
-
-        driver.get("http://dev-strype.idium.no/travelsome.login");
+        driver.get(testServerUrl +  "travelsome.login");
 
         System.out.println("page title -> " +driver.getTitle());
 
@@ -68,9 +66,6 @@ public class Login {
         WebElement submitButton = driver.findElement(By.className("bi_user-key"));
 
         submitButton.click();
-        //submitButton.submit();
-
-        //driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 
         WebElement myDynamicElement = (new WebDriverWait(driver, 100))
                 .until(ExpectedConditions.presenceOfElementLocated(By.className("strype-thumb-menu")));
@@ -78,14 +73,13 @@ public class Login {
         System.out.println("Title of the page after login is -> " + driver.getTitle());
 
     }
-/*
+
     @After
-    public void takeScreenShotOnFailure(ITestResult testResult) throws IOException {
-        if (testResult.getStatus() == ITestResult.FAILURE) {
-            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("errorScreenshots\\" + testResult.getName() + "-"
-                    + Arrays.toString(testResult.getParameters()) +  ".jpg"));
-        }
+    public void closeWebDriver () {
+        driver.quit();
     }
-    */
+
+    @Rule
+    public takeScreenshotRule takeScreenshotRule = new takeScreenshotRule(driver);
+
 }

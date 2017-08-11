@@ -3,6 +3,11 @@ package com.idium.editap.selenium;
 
 import io.ddavison.conductor.Browser;
 import io.ddavison.conductor.Config;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 @Config(
         browser = Browser.CHROME,
@@ -13,31 +18,38 @@ import io.ddavison.conductor.Config;
  * Created by Bartek on 23.05.2017.
  */
 public class ManageStrypeTest extends Login {
-/*
+
     @Test
     public void openManageStrypeTest() {
-        //validatePresent(HomePage.LOC_BTN_THUMBMENU);
 
-        //click(HomePage.LOC_BTN_THUMBMENU);
+        WebElement buttonThumbmenu = driver.findElement(By.xpath(AdminInterfaceElements.LOC_BTN_THUMBMENU));
+        buttonThumbmenu.click();
 
-        validatePresent(AdminInterfaceElements.LOC_BTN_OPENMANAGESTRYPE);
+        WebElement strypeSettings = (new WebDriverWait(driver, 100))
+                .until(ExpectedConditions.presenceOfElementLocated(AdminInterfaceElements.LOC_BTN_THUMBMENU_SOLUTIONSETTINGS));
 
-        click(AdminInterfaceElements.LOC_BTN_OPENMANAGESTRYPE);
+
+        WebElement buttonManageStrype = driver.findElement(AdminInterfaceElements.LOC_BTN_OPENMANAGESTRYPE);
+
+        buttonManageStrype.click();
 
     }
 
     @Test
     public void cutFirstStrypeTest() {
-        //validatePresent(HomePage.LOC_BTN_THUMBMENU);
 
-        //click(HomePage.LOC_BTN_THUMBMENU);
+        WebElement buttonThumbmenu = driver.findElement(By.xpath(AdminInterfaceElements.LOC_BTN_THUMBMENU));
+        buttonThumbmenu.click();
 
-        validatePresent(AdminInterfaceElements.LOC_BTN_OPENMANAGESTRYPE);
-        click(AdminInterfaceElements.LOC_BTN_OPENMANAGESTRYPE);
+        WebElement strypeSettings = (new WebDriverWait(driver, 100))
+                .until(ExpectedConditions.presenceOfElementLocated(AdminInterfaceElements.LOC_BTN_OPENMANAGESTRYPE));
 
-        validatePresent(AdminInterfaceElements.LOC_BTN_CUTSTRYPE);
-        click(AdminInterfaceElements.LOC_BTN_CUTSTRYPE);
+        WebElement cutStrype = (new WebDriverWait(driver, 100))
+                .until(ExpectedConditions.presenceOfElementLocated(AdminInterfaceElements.LOC_BTN_CUTSTRYPE));
+
+        cutStrype.click();
+
 
     }
-*/
+
 }
